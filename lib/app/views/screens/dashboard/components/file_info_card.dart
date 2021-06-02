@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:srs_admin/app/model/MyFiles.dart';
-import 'package:srs_admin/app/constants/constants.dart';
+import 'package:srs_admin/app/model/MyClients.dart';
+import 'package:srs_admin/app/constants/colors.dart';
 
 
 class FileInfoCard extends StatelessWidget {
@@ -55,7 +55,7 @@ class FileInfoCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "${info.numOfFiels} Files",
+                "${info.numOfFiels} of",
                 style: Theme.of(context)
                     .textTheme
                     .caption!

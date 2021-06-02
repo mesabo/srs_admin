@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:srs_admin/app/constants/constants.dart';
-import 'package:srs_admin/app/model/RecentFile.dart';
+import 'package:get/get.dart';
+import 'package:srs_admin/app/constants/colors.dart';
+import 'package:srs_admin/app/constants/names.dart';
+import 'package:srs_admin/app/model/RecentClients.dart';
 
-class RecentFiles extends StatelessWidget {
-
+class RecentClients extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +17,7 @@ class RecentFiles extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Recent Files",
+            "${Names.RECENTCLIENTS}",
             style: Theme.of(context).textTheme.subtitle1,
           ),
           SizedBox(
@@ -27,18 +27,21 @@ class RecentFiles extends StatelessWidget {
               columnSpacing: defaultPadding,
               columns: [
                 DataColumn(
-                  label: Text("File Name"),
+                  label: Text("${Names.ID}"),
                 ),
                 DataColumn(
-                  label: Text("Date"),
+                  label: Text("${Names.EMAIL}"),
                 ),
                 DataColumn(
-                  label: Text("Size"),
+                  label: Text("${Names.DATE}"),
+                ),
+                DataColumn(
+                  label: Text("${Names.DATE}"),
                 ),
               ],
               rows: List.generate(
-                demoRecentFiles.length,
-                (index) => recentFileDataRow(demoRecentFiles[index]),
+                demoRecentClients.length,
+                (index) => RecentClientDataRow(demoRecentClients[index], index),
               ),
             ),
           ),
@@ -48,26 +51,47 @@ class RecentFiles extends StatelessWidget {
   }
 }
 
-DataRow recentFileDataRow(RecentFile fileInfo) {
+DataRow RecentClientDataRow(RecentClient fileInfo, int id) {
   return DataRow(
     cells: [
-      DataCell(
-        Row(
-          children: [
-            SvgPicture.asset(
-              fileInfo.icon,
-              height: 30,
-              width: 30,
+      DataCell(Text(
+        '$id',
+        overflow: TextOverflow.ellipsis,
+        softWrap: false,
+      )),
+      DataCell(Text(
+        fileInfo.email,
+        overflow: TextOverflow.ellipsis,
+        softWrap: false,
+      )),
+      DataCell(Text(
+        fileInfo.date,
+        overflow: TextOverflow.ellipsis,
+        softWrap: false,
+      )),
+      DataCell(IconButton(
+        onPressed: () {
+          Get.dialog(AlertDialog(
+            title: Text("soubscription"),
+            content: Text(
+              "id: $id\nemail:  ${fileInfo.email}\n\nTap on next to subscribe this user. You can assign the service and the type of subscription to it.",
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-              child: Text(fileInfo.title),
-            ),
-          ],
+            actions: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(onPressed: () => Get.back(), child: Text("back")),
+                  TextButton(onPressed: () => Get.back(), child: Text("next")),
+                ],
+              )
+            ],
+          ));
+        },
+        icon: Icon(
+          Icons.remove_red_eye,
+          color: primaryColor,
         ),
-      ),
-      DataCell(Text(fileInfo.date)),
-      DataCell(Text(fileInfo.size)),
+      )),
     ],
   );
 }

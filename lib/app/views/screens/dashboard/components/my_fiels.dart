@@ -1,8 +1,9 @@
-import 'package:srs_admin/app/constants/constants.dart';
+import 'package:srs_admin/app/constants/colors.dart';
+import 'package:srs_admin/app/constants/names.dart';
 import 'package:srs_admin/app/constants/responsive.dart';
 
 import 'package:flutter/material.dart';
-import 'package:srs_admin/app/model/MyFiles.dart';
+import 'package:srs_admin/app/model/MyClients.dart';
 
 import 'file_info_card.dart';
 
@@ -16,7 +17,7 @@ class MyFiels extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "My Files",
+              "${Names.DASHBOARD}",
               style: Theme.of(context).textTheme.subtitle1,
             ),
             ElevatedButton.icon(
@@ -29,7 +30,7 @@ class MyFiels extends StatelessWidget {
               ),
               onPressed: () {},
               icon: Icon(Icons.add),
-              label: Text("Add New"),
+              label: Text("${Names.ADDNEW}"),
             ),
           ],
         ),
@@ -53,7 +54,7 @@ class FileInfoCardGridView extends StatelessWidget {
   const FileInfoCardGridView({
     this.crossAxisCount = 4,
     this.childAspectRatio = 1,
-  }) ;
+  });
 
   final int crossAxisCount;
   final double childAspectRatio;

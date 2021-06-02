@@ -1,14 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-import 'package:srs_admin/app/constants/constants.dart';
+import 'package:srs_admin/app/constants/colors.dart';
 import 'package:srs_admin/app/constants/responsive.dart';
 import 'package:srs_admin/app/controller/MenuController.dart';
 
-
 class Header extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -33,7 +30,6 @@ class Header extends StatelessWidget {
 }
 
 class ProfileCard extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,16 +45,19 @@ class ProfileCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Image.asset(
+          /* Image.asset(
             "assets/images/profile_pic.png",
             height: 38,
-          ),
-          if (!Responsive.isMobile(context))
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-              child: Text("Angelina Joli"),
+          ), */
+          //if (!Responsive.isMobile(context))
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+            child: Text(
+              "Mesabo",
+              softWrap: true,
+              overflow: TextOverflow.clip,
             ),
+          ),
           Icon(Icons.keyboard_arrow_down),
         ],
       ),
@@ -67,7 +66,6 @@ class ProfileCard extends StatelessWidget {
 }
 
 class SearchField extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return TextField(

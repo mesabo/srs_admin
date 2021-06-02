@@ -1,5 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:srs_admin/app/constants/colors.dart';
+import 'package:srs_admin/app/constants/names.dart';
 
 class SideMenu extends StatelessWidget {
   @override
@@ -10,45 +14,53 @@ class SideMenu extends StatelessWidget {
         child: Column(
           children: [
             DrawerHeader(
-              child: Image.asset("assets/images/logo.png"),
+              child: CircleAvatar(
+                backgroundColor: primaryColor,
+                radius: 50,
+                child: Text(
+                  "ADMIN",
+                  style: TextStyle(color: secondaryColor),
+                ),
+              ),
+              //Image.asset("assets/images/logo.png"),
             ),
             DrawerListTile(
-              title: "Dashbord",
+              title: "${Names.DASHBOARD}",
               svgSrc: "assets/icons/menu_dashbord.svg",
               press: () {},
             ),
             DrawerListTile(
-              title: "Transaction",
-              svgSrc: "assets/icons/menu_tran.svg",
-              press: () {},
-            ),
-            DrawerListTile(
-              title: "Task",
-              svgSrc: "assets/icons/menu_task.svg",
-              press: () {},
-            ),
-            DrawerListTile(
-              title: "Documents",
-              svgSrc: "assets/icons/menu_doc.svg",
-              press: () {},
-            ),
-            DrawerListTile(
-              title: "Store",
+              title: "${Names.STORES}",
               svgSrc: "assets/icons/menu_store.svg",
               press: () {},
             ),
             DrawerListTile(
-              title: "Notification",
-              svgSrc: "assets/icons/menu_notification.svg",
-              press: () {},
-            ),
-            DrawerListTile(
-              title: "Profile",
+              title: "${Names.CLIENTS}",
               svgSrc: "assets/icons/menu_profile.svg",
               press: () {},
             ),
             DrawerListTile(
-              title: "Settings",
+              title: "${Names.SERVICES}",
+              svgSrc: "assets/icons/menu_task.svg",
+              press: () {},
+            ),
+            DrawerListTile(
+              title: "${Names.SUBSCRIPTIONS}",
+              svgSrc: "assets/icons/menu_tran.svg",
+              press: () {},
+            ),
+            DrawerListTile(
+              title: "${Names.NOTIFICATONS}",
+              svgSrc: "assets/icons/menu_notification.svg",
+              press: () {},
+            ),
+            DrawerListTile(
+              title: "${Names.ARCHIVES}",
+              svgSrc: "assets/icons/menu_doc.svg",
+              press: () {},
+            ),
+            DrawerListTile(
+              title: "${Names.SETTINGS}",
               svgSrc: "assets/icons/menu_setting.svg",
               press: () {},
             ),

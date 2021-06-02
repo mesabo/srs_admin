@@ -1,5 +1,5 @@
-import 'package:srs_admin/app/constants/constants.dart';
-
+import 'package:srs_admin/app/constants/colors.dart';
+import 'package:srs_admin/app/constants/names.dart' show Names;
 import 'package:flutter/material.dart';
 
 class CloudStorageInfo {
@@ -18,34 +18,34 @@ class CloudStorageInfo {
 
 List demoMyFiels = [
   CloudStorageInfo(
-    title: "Documents",
+    title: "${Names.USERS}",
     numOfFiels: 1328,
     svgSrc: "assets/icons/Documents.svg",
-    totalStorage: "1.9GB",
+    totalStorage: "19.9k",
     color: primaryColor,
     percentage: 35,
   ),
   CloudStorageInfo(
-    title: "Google Drive",
+    title: "${Names.CLIENTS}",
     numOfFiels: 1328,
     svgSrc: "assets/icons/google_drive.svg",
-    totalStorage: "2.9GB",
+    totalStorage: "271.9k",
     color: Color(0xFFFFA113),
     percentage: 35,
   ),
   CloudStorageInfo(
-    title: "One Drive",
+    title: "${Names.NEWCLIENT}",
     numOfFiels: 1328,
     svgSrc: "assets/icons/one_drive.svg",
-    totalStorage: "1GB",
+    totalStorage: "102k",
     color: Color(0xFFA4CDFF),
     percentage: 10,
   ),
   CloudStorageInfo(
-    title: "Documents",
+    title: "${Names.SUBSCRIPTIONS}",
     numOfFiels: 5328,
     svgSrc: "assets/icons/drop_box.svg",
-    totalStorage: "7.3GB",
+    totalStorage: "73.3k",
     color: Color(0xFF007EE5),
     percentage: 78,
   ),
