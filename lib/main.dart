@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:srs_admin/app/constants/colors.dart';
 import 'package:srs_admin/app/controller/menu_controller.dart';
-import 'package:srs_admin/app/views/screens/main/main_screen.dart';
+import 'package:srs_admin/app/views/main/main_screen.dart';
 
 import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';
@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'ChapChap Admin',
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: bgColor,
-        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
-            .apply(bodyColor: Colors.white),
-        canvasColor: secondaryColor,
-      ),
-      initialRoute: Routes.INITIAL,
+          scaffoldBackgroundColor: bgColor,
+          textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
+              .apply(bodyColor: Colors.white),
+          canvasColor: secondaryColor,
+          textButtonTheme: Theme.of(context).textButtonTheme),
+      // initialRoute: Routes.MAINSCREEN,
       getPages: AppPages.pages,
       defaultTransition: Transition.cupertinoDialog,
       home: MultiProvider(

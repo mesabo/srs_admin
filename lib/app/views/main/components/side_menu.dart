@@ -2,8 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:srs_admin/app/constants/colors.dart';
 import 'package:srs_admin/app/constants/names.dart';
+import 'package:srs_admin/app/routes/app_routes.dart';
 
 class SideMenu extends StatelessWidget {
   @override
@@ -42,7 +44,7 @@ class SideMenu extends StatelessWidget {
             DrawerListTile(
               title: "${Names.SERVICES}",
               svgSrc: "assets/icons/menu_task.svg",
-              press: () {},
+              press: () => Get.toNamed(Routes.SERVICESSCREEN),
             ),
             DrawerListTile(
               title: "${Names.SUBSCRIPTIONS}",

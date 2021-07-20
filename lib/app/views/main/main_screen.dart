@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:srs_admin/app/constants/responsive.dart';
 import 'package:srs_admin/app/controller/menu_controller.dart';
-import 'package:srs_admin/app/views/screens/dashboard/dashboard_screen.dart';
+import 'package:srs_admin/app/views/dashboard/dashboard_screen.dart';
 
 import 'components/side_menu.dart';
 
